@@ -17,7 +17,7 @@ rsync:
 	$(REMOTE) $(RSYNC)
 
 main.o: main.c
-	$(REMOTE) $(CC) -c /Users/ge/raspberrypi/smartyMeterReader/main.c
+	$(REMOTE) $(CC) -c /Users/ge/raspberrypi/smartMeterReader/main.c
 
 smartMeterReader: main.o
 	#lcd.o lcdInterface.o rawData.o notImplemented.o settings.o records.o about.o raspberry.o elm.o rs232.o moreData.o

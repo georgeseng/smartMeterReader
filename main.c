@@ -201,7 +201,7 @@ void read_config(void) {
 	
 	int isComment = 0;
 	
-	lf = fopen("/etc/smartyMeterReader.conf", "r");
+	lf = fopen("/etc/smartMeterReader.conf", "r");
 	if(lf) {
 		while(fgets (line , 256 , lf) != NULL ) {
 			//read line by line
@@ -258,7 +258,7 @@ void read_config(void) {
 		
 		fclose(lf);
 	} else {
-		syslog(LOG_WARNING, "Could not open config file /etc/smartyMeterReader.conf!\n");
+		syslog(LOG_WARNING, "Could not open config file /etc/smartMeterReader.conf!\n");
 	}
 }
 
@@ -302,7 +302,7 @@ int main(int argc, char* argv[]) {
 		printf(" process_id of child process %d \n", process_id);
 		
 		//write to pid file
-		fp = fopen("/var/run/smartyMeterReader.pid", "w");
+		fp = fopen("/var/run/smartMeterReader.pid", "w");
 		if(fp) {
 			char buf[64];
 			int n = sprintf(buf, "%d", process_id);
@@ -332,7 +332,7 @@ int main(int argc, char* argv[]) {
 		close(STDOUT_FILENO);
 		close(STDERR_FILENO);
 		
-		stdout = fopen ("/var/log/smartyMeterReader", "a");
+		stdout = fopen ("/var/log/smartMeterReader", "a");
 		setbuf(stdout,NULL);
 
 	}
@@ -528,7 +528,7 @@ int main(int argc, char* argv[]) {
 				time(&rawtime);
 				info = localtime(&rawtime);
 				
-				sprintf(filename, "/root/programming/smartyMeterReader/data/%s_%04d-%02d-%02d_%02d-%02d-%02d_%d.txt",
+				sprintf(filename, "/root/programming/smartMeterReader/data/%s_%04d-%02d-%02d_%02d-%02d-%02d_%d.txt",
 						deviceID,
 						info->tm_year+1900, info->tm_mon+1, info->tm_mday,
 						info->tm_hour, info->tm_min, info->tm_sec,
