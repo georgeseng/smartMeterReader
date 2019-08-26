@@ -1,0 +1,6 @@
+ATSAME53J19A-AU
+
+ethernet (communication, firmware update?)
+sd-card (saving for transmission)
+usb (programming)
+uart (smart meter interface)
